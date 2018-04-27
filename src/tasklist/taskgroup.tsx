@@ -8,11 +8,12 @@ interface ITaskGroupProps {
     group: string;
     onGroupClick: (index: number) => void;
     index: number;
+    selected: boolean;
 }
 
 export const TaskGroup: React.StatelessComponent<ITaskGroupProps> = (props: ITaskGroupProps) => {
     return (
-        <div style={{ borderTop: "1px solid gray", borderBottom: "1px solid gray", padding: "10px", textAlign: "left", cursor: "pointer" }} onClick={onGroupClick(props)}>
+        <div style={{ borderTop: "1px solid gray", borderBottom: "1px solid gray", padding: "10px", textAlign: "left", cursor: "pointer", backgroundColor: (props.selected ? "#f1efbc" : "") }} onClick={onGroupClick(props)}>
             <img src={Group} style={{ float: "left", height: "15px", top: "15px", position: "relative" }} />
             <div style={{ paddingLeft: "25px" }}>
                 <div style={{fontSize: "20px", fontWeight: "bold"}}>

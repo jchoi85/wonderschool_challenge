@@ -82,7 +82,7 @@ export class TaskGroupList extends React.Component<{}, ITaskGroupListState> {
 
     private TaskGroupSingle = (group: string, index: number) => { // used to map groups
         return(
-            <TaskGroup key={index} index={index} group={group} completion={this.state.completion[index]} total={this.state.tasks[index].length} onGroupClick={this.onGroupClick} />
+            <TaskGroup key={index} index={index} group={group} completion={this.state.completion[index]} total={this.state.tasks[index].length} onGroupClick={this.onGroupClick} selected={group === this.state.groups[this.state.currentGroup]} />
         )
     }
 
